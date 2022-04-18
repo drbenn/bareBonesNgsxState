@@ -1,27 +1,15 @@
-# 3
+State Concept and Functional Path
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.5.
+The Grand State Definition Simplified
 
-## Development server
+1. The State is a central repository for all components to interact with.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Functional Path from UI to State Interaction
 
-## Code scaffolding
+2. a. When a user interacts(ie clicks a button) with the UI a component method is called.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+   b.This component method can actually call a state method, dispatching info to the state by using the state action reference name.
 
-## Build
+   c. The component has been made aware of the state by the @Select decorator that passes in teh state, declaring it as an observable.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   d. The observable is implemented in the component through the constructor, which subscribes to the state store.

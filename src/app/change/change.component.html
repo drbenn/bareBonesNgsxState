@@ -1,0 +1,6 @@
+<p>change works!</p>
+<button routerLink="/display">to display</button>
+<button (click)="increment()">Up</button>
+<button (click)="decrement()">Down</button>
+<input type="number" [(ngModel)]="value" (ngModelChange)="setValue($event)" />
+<button (click)="resetValue()">Clear</button>
